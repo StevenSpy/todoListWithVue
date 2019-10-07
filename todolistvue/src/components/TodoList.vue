@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TodoInputText v-model="newTodo" />
+    <TodoInputText v-model="newTodo" @keydown.enter="addTodo" />
     <TodoListItem :todos="todos" />
   </div>
 </template>
@@ -16,9 +16,22 @@ export default {
 
   data() {
     return {
-      todos: [Salade, Tomates, Oignons],
+      todos: ["Salade", "Tomates", "Oignons"],
       newTodo: ""
     };
+  },
+
+  methods: {
+    addTodo() {
+      const trimmedText = this.newTodo.trim();
+      const capitalizeText =
+        trimmedText.charAt(0).toUpperCase() +
+        trimmedText.substr(1).toLowerCase();
+      if (capitalizeText) {
+        this.todos.push(capitalizeText);
+        this.newTodo = "";
+      }
+    }
   }
 };
 </script>
