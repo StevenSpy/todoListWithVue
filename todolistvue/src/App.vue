@@ -1,6 +1,6 @@
 <template>
-  <div id="app" class="container">
-    <h1 class="title is-1">Hello World !</h1>
+  <div id="app">
+    <h1 class="title is-1">Ma To Do List</h1>
     <TodoList />
   </div>
 </template>
@@ -17,9 +17,9 @@ export default {
 
 <style lang="scss">
 #app {
-  margin: 60px 60px 0 100px;
+  margin: 100px 100px 0 100px;
 }
-.input {
-  width: 50vw;
+h1{
+  text-align: center;
 }
 </style>
