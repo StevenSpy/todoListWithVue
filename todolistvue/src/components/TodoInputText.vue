@@ -1,11 +1,13 @@
 <template>
   <div class="control">
-    <input class="input" type="text" placeholder="Enter your tasks : " />
+    <input class="input" type="text" placeholder="Enter your tasks : " v-bind="value" />
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["value"]
+};
 </script>
 
 <style>
